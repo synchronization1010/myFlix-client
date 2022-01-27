@@ -27,15 +27,6 @@ export function LoginView(props) {
             <button type="submit" onClick={handleSubmit}>Submit</button>
         </form>
     );
-
-    return (
-        <form>
-            <label>
-                Don't have an account? Registar here
-            </label>
-            <button type="submit">Registar</button>
-        </form>
-    );
 }
 
 LoginView.propTypes = {

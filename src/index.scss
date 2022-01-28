@@ -1,4 +1,11 @@
-$color: steelblue;
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #414244;
+  color: #ffffff;
+}
+
+$color: rgb(178, 180, 70);
 
 .my-flix {
   color: $color;

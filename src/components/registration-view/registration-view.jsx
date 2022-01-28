@@ -1,6 +1,7 @@
+import './registration-view.scss';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './registration-view.scss';
+import { Form } from 'react-bootstrap';
 
 export function RegistrationView(props) {
     const [ username, setUsername ] = useState('');
@@ -16,21 +17,29 @@ export function RegistrationView(props) {
     };
 
     return (
-        <form>
-            <label>
-                Username:
-                <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-            </label>
-            <label>
-                Password:
-                <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-            </label>
-            <label>
-                Email:
-                <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-            </label>
-            <button type="submit" onClick={handleSubmit}>Submit</button>
-        </form>
+        <Form className="form">
+            <h3>Sign Up</h3>
+
+            <Form.Group className="form-group">
+                <Form.Label>Username</Form.Label>
+                <Form.Control type="text" className="form-control" value={username} onChange={e => setUsername(e.target.value)} placeholder="Enter username" />
+            </Form.Group>
+
+            <Form.Group className="form-group">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control type="email" className="form-control" value={email} onChange={e => setEmail(e.target.value)} placeholder="Enter email" />
+            </Form.Group>
+
+            <Form.Group className="form-group">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" className="form-control" value={password} onChange={e => setPassword(e.target.value)} placeholder="Enter password" />
+            </Form.Group>
+
+            <button variant="primary" type="submit" onClick={handleSubmit}>Submit</button>
+            <p className="forgot-password text-right">
+                Already registered? <a href="#">sign in</a>
+            </p>
+        </Form>
     );
 }
 

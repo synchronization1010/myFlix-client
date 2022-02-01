@@ -12,7 +12,7 @@ export function LoginView(props) {
     const handleSubmit = (e) => {
       e.preventDefault();
       /* Send a request to the server for authentication */
-      axios.post('YOUR_API_URL/login', {
+      axios.post('https://calem-test-api.herokuapp.com/login', {
         Username: username,
         Password: password
       })

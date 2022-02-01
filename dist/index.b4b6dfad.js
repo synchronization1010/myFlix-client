@@ -22999,7 +22999,7 @@ class MainView extends _reactDefault.default.Component {
         this.getMovies(authData.token);
     }
     getMovies(token) {
-        _axiosDefault.default.get('YOUR_API_URL/movies', {
+        _axiosDefault.default.get('https://calem-test-api.herokuapp.com/movies', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -23019,39 +23019,30 @@ class MainView extends _reactDefault.default.Component {
             user: null
         });
     }
+    // INCLUDE THIS SOMEWHERE ---  <button onClick={() => { this.onLoggedOut() }}>Logout</button>
     render() {
         const { movies , selectedMovie , user: user1 , registration: registration1  } = this.state;
         if (!registration1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_registrationView.RegistrationView, {
             onRegistration: (registration)=>this.onRegistration(registration)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 82,
+            lineNumber: 83,
             columnNumber: 32
         }, this));
         if (!user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
             onLoggedIn: (user)=>this.onLoggedIn(user)
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 84,
+            lineNumber: 85,
             columnNumber: 23
         }, this));
         if (movies.length === 0) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "main-view"
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 86,
+            lineNumber: 87,
             columnNumber: 37
         }, this));
-        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
-            onClick: ()=>{
-                this.onLoggedOut();
-            },
-            children: "Logout"
-        }, void 0, false, {
-            fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 88,
-            columnNumber: 5
-        }, this);
         return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_rowDefault.default, {
             className: "main-view justify-content-md-center",
             children: selectedMovie ? /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
@@ -23063,12 +23054,12 @@ class MainView extends _reactDefault.default.Component {
                     }
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 96,
+                    lineNumber: 95,
                     columnNumber: 27
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 95,
+                lineNumber: 94,
                 columnNumber: 23
             }, this) : movies.map((movie)=>/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_colDefault.default, {
                     md: 3,
@@ -23079,18 +23070,18 @@ class MainView extends _reactDefault.default.Component {
                         }
                     }, movie._id, false, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 101,
+                        lineNumber: 100,
                         columnNumber: 27
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 100,
+                    lineNumber: 99,
                     columnNumber: 23
                 }, this)
             )
         }, void 0, false, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 91,
+            lineNumber: 90,
             columnNumber: 7
         }, this));
     }

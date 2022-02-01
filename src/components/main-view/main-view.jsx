@@ -54,7 +54,7 @@ export class MainView extends React.Component {
   }
 
   getMovies(token) {
-    axios.get('YOUR_API_URL/movies', {
+    axios.get('https://calem-test-api.herokuapp.com/movies', {
       headers: { Authorization: `Bearer ${token}`}
     })
     .then(response => {
@@ -76,6 +76,7 @@ export class MainView extends React.Component {
     });
   }
 
+  // INCLUDE THIS SOMEWHERE ---  <button onClick={() => { this.onLoggedOut() }}>Logout</button>
   render() {
     const { movies, selectedMovie, user, registration } = this.state;
 
@@ -84,8 +85,6 @@ export class MainView extends React.Component {
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
     if (movies.length === 0) return <div className="main-view" />;
-
-    <button onClick={() => { this.onLoggedOut() }}>Logout</button>
 
     return (
       <Row className="main-view justify-content-md-center">

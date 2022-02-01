@@ -20,16 +20,14 @@ export class MainView extends React.Component {
         }
   }
 
-  componentDidMount(){
-    axios.get('https://calem-test-api.herokuapp.com/movies')
-      .then(response => {
-        this.setState({
-          movies: response.data
-        });
-      })
-      .catch(error => {
-        console.log(error);
-    });
+  componentDidMount() {
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user')
+      });
+      this.getMovies(accessToken);
+    }
   }
 
   setSelectedMovie(movie) {
@@ -71,6 +69,14 @@ export class MainView extends React.Component {
     });
   }
 
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user: null
+    });
+  }
+
   render() {
     const { movies, selectedMovie, user, registration } = this.state;
 
@@ -79,6 +85,8 @@ export class MainView extends React.Component {
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
     if (movies.length === 0) return <div className="main-view" />;
+
+    <button onClick={() => { this.onLoggedOut() }}>Logout</button>
 
     return (
       <Row className="main-view justify-content-md-center">

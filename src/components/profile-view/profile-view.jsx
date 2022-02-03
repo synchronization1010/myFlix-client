@@ -95,7 +95,7 @@ export class ProfileView extends React.Component {
 
         axios
             .delete(
-                `https://calem-test-api.herokuapp.com/users/${Username}/movies/${movie._id}`,
+                `https://calem-test-api.herokuapp.com/users/${Username}/FavoriteMovies/${movie._id}`,
                 {
                     headers: { Authorization: `Bearer ${token}` },
                 }

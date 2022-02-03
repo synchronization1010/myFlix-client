@@ -38282,7 +38282,7 @@ class ProfileView extends _reactDefault.default.Component {
         e.preventDefault();
         const Username = localStorage.getItem('user');
         const token = localStorage.getItem('token');
-        _axiosDefault.default.delete(`https://calem-test-api.herokuapp.com/users/${Username}/movies/${movie._id}`, {
+        _axiosDefault.default.delete(`https://calem-test-api.herokuapp.com/users/${Username}/FavoriteMovies/${movie._id}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }

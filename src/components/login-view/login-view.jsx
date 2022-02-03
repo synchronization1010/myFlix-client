@@ -23,6 +23,7 @@ export function LoginView(props) {
       })
       .catch(e => {
         console.log('no such user')
+        alert('No such user, please register');
       });
     };
 

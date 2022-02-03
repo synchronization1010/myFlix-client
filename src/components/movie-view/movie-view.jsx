@@ -1,9 +1,26 @@
 import './movie-view.scss'
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import axios from 'axios';
+import Button from 'react-bootstrap/Button';
 
 export class MovieView extends React.Component {
+
+    addFavoriteMovie() {
+        const token = localStorage.getItem('token');
+        const username = localStorage.getItem('user');
+    
+        axios.post(`https://calem-test-api.herokuapp.com/users/${username}/movies/${this.props.movie._id}`, {}, {
+            headers: { Authorization: `Bearer ${token}` },
+            method: 'POST'
+        })
+            .then(response => {
+                alert(`Added to Favorites List`)
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    };
 
     render() {
         const { movie, onBackClick } = this.props;
@@ -31,7 +48,7 @@ export class MovieView extends React.Component {
                 </div>
 
                 <button onClick={() => { onBackClick(null); }}>Back</button>
-
+                <Button variant="outline-primary" className="btn-outline-primary" value={movie._id} onClick={(e) => this.addFavoriteMovie(e, movie)}>Add to Favorites</Button>
             </div>
         );
     }

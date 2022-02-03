@@ -1,6 +1,7 @@
 import './registration-view.scss';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import { Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -15,15 +16,15 @@ export function RegistrationView(props) {
         if(!username){
             setUsernameErr('Username required');
             isReq = false;
-        }else if(username.length < 2){
-            setUsernameErr('Username must be at least 2 characters long');
+        }else if(username.length < 6){
+            setUsernameErr('Username must be at least 6 characters long');
             isReq = false;
         }
         if(!password){
             setPasswordErr('Password required');
             isReq = false;
-        }else if(password.length < 6){
-            setPassword('Password must be at least 6 characters long');
+        }else if(password.length < 8){
+            setPassword('Password must be at least 8 characters long');
             isReq = false;
         }
         if(!email){
@@ -46,7 +47,6 @@ export function RegistrationView(props) {
                 Username: username,
                 Password: password,
                 Email: email,
-                Birthday: birthday,
             })
                 .then(response => {
                     const data = response.data;

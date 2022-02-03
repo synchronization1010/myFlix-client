@@ -2,6 +2,7 @@ import './registration-view.scss';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export function RegistrationView(props) {
     const [ username, setUsername ] = useState('');
@@ -42,7 +43,7 @@ export function RegistrationView(props) {
 
             <button variant="primary" type="submit" onClick={handleSubmit}>Submit</button>
             <p className="forgot-password text-right">
-                Already registered? <a href="#">sign in</a>
+                Already registered? <Link to="/login"><a href="#">sign in</a></Link>
             </p>
         </Form>
     );

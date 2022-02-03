@@ -79,7 +79,7 @@ export class MainView extends React.Component {
 
       return (
           <Router>
-              <Navbar user={user} />
+              <Navbar id='nav-bar' user={user} />
               <Container>
                   <Row className="main-view justify-content-md-center">
                       <Route exact path="/" render={() => {

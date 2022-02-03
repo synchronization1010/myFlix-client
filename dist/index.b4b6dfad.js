@@ -23025,7 +23025,7 @@ class MainView extends _reactDefault.default.Component {
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 82,
-                    columnNumber: 15
+                    columnNumber: 9
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Row, {
@@ -23053,7 +23053,7 @@ class MainView extends _reactDefault.default.Component {
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
                                 lineNumber: 85,
-                                columnNumber: 23
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                                 path: "/login",
@@ -23068,7 +23068,7 @@ class MainView extends _reactDefault.default.Component {
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
                                 lineNumber: 100,
-                                columnNumber: 23
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                                 path: "/register",
@@ -23084,7 +23084,7 @@ class MainView extends _reactDefault.default.Component {
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
                                 lineNumber: 107,
-                                columnNumber: 23
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                                 path: "/movies/:movieId",
@@ -23109,7 +23109,7 @@ class MainView extends _reactDefault.default.Component {
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
                                 lineNumber: 118,
-                                columnNumber: 23
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                                 path: "/profile",
@@ -23130,7 +23130,7 @@ class MainView extends _reactDefault.default.Component {
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
                                 lineNumber: 139,
-                                columnNumber: 23
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                                 path: "/genres/:name",
@@ -23158,7 +23158,7 @@ class MainView extends _reactDefault.default.Component {
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
                                 lineNumber: 154,
-                                columnNumber: 23
+                                columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                                 path: "/directors/:name",
@@ -23186,24 +23186,24 @@ class MainView extends _reactDefault.default.Component {
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
                                 lineNumber: 177,
-                                columnNumber: 23
+                                columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/main-view/main-view.jsx",
                         lineNumber: 84,
-                        columnNumber: 19
+                        columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 83,
-                    columnNumber: 15
+                    columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/main-view/main-view.jsx",
             lineNumber: 81,
-            columnNumber: 11
+            columnNumber: 7
         }, this));
     }
 }
@@ -30192,6 +30192,11 @@ function RegistrationView(props) {
 _s(RegistrationView, "gU931AvYb9XYQdfa9ePG0mmeHF8=");
 _c = RegistrationView;
 RegistrationView.propTypes = {
+    register: _propTypesDefault.default.shape({
+        username: _propTypesDefault.default.string.isRequired,
+        password: _propTypesDefault.default.string.isRequired,
+        email: _propTypesDefault.default.string.isRequired
+    }),
     onRegistration: _propTypesDefault.default.func.isRequired
 };
 var _c;

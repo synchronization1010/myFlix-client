@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import './login-view.scss';
 
 export function LoginView(props) {
@@ -39,6 +40,9 @@ export function LoginView(props) {
           <Button variant="primary" type="submit" onClick={handleSubmit}>
             Submit
           </Button>
+          <Link to="/register">
+            <Button className="ml-3" variant="secondary">Register now</Button>
+          </Link>
         </Form>
     );
     

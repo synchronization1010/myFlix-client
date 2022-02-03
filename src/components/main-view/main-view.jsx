@@ -11,7 +11,7 @@ import { GenreView } from "../genre-view/genre-view";
 import { DirectorView } from '../director-view/director-view';
 import { Navbar } from '../navbar/navbar';
 import { RegistrationView } from '../registration-view/registration-view'
-import { Profileview } from '../profile-view/profile-view';
+import { ProfileView } from '../profile-view/profile-view';
 //Import Views
 
 //Import react-bootstrap

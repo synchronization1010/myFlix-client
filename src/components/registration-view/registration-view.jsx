@@ -8,18 +8,30 @@ export function RegistrationView(props) {
     const [ username, setUsername ] = useState('');
     const [ password, setPassword ] = useState('');
     const [ email, setEmail ] = useState('');
-    const [ Birthdate, setBirthdate ] = useState('');
-    const [ UsernameErr, setUsernameErr ] = useState('');
-    const [ PasswordErr, setPasswordErr ] = useState('');
-    const [ emailErr, setemailErr ] = useState('');
-    const [ BirthdateErr, setBirthdateErr ] = useState('');
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(username, password);
-        /* Send a request to the server for authentication */
-        /* then call props.onLoggedIn(username) */
-        props.onRegistration(username);
+        const isReq = validate();
+        if(isReq) {
+            /* Send request to the server for authentication */
+            axios.post('https://calem-test-api.herokuapp.com/users', {
+                Username: username,
+                Password: password,
+                Email: email,
+                Birthday: birthday,
+            })
+                .then(response => {
+                    const data = response.data;
+                    console.log(data);
+                    alert('Registration successful, please login!');
+                    window.open('/', '_self');
+                })
+                .catch(response => {
+                    console.error(response);
+                    alert('Unable to register');
+                });
+        }
     };
 
     return (
@@ -55,5 +67,5 @@ RegistrationView.propTypes = {
       password: PropTypes.string.isRequired,
       email: PropTypes.string.isRequired,
     }),
-    onRegistration: PropTypes.func.isRequired,
+    onRegistration: PropTypes.func,
   };

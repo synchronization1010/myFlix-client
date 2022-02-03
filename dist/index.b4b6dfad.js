@@ -30043,15 +30043,23 @@ function RegistrationView(props) {
     const [username, setUsername] = _react.useState('');
     const [password, setPassword] = _react.useState('');
     const [email, setEmail] = _react.useState('');
-    const [Birthdate, setBirthdate] = _react.useState('');
-    const [UsernameErr, setUsernameErr] = _react.useState('');
-    const [PasswordErr, setPasswordErr] = _react.useState('');
-    const [emailErr, setemailErr] = _react.useState('');
-    const [BirthdateErr, setBirthdateErr] = _react.useState('');
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log(username, password);
-        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onRegistration(username);
+        const isReq = validate();
+        if (isReq) /* Send request to the server for authentication */ axios.post('https://calem-test-api.herokuapp.com/users', {
+            Username: username,
+            Password: password,
+            Email: email,
+            Birthday: birthday
+        }).then((response)=>{
+            const data = response.data;
+            console.log(data);
+            alert('Registration successful, please login!');
+            window.open('/', '_self');
+        }).catch((response)=>{
+            console.error(response);
+            alert('Unable to register');
+        });
     };
     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Form, {
         className: "form",
@@ -30060,7 +30068,7 @@ function RegistrationView(props) {
                 children: "Sign Up"
             }, void 0, false, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 27,
+                lineNumber: 39,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Form.Group, {
@@ -30070,7 +30078,7 @@ function RegistrationView(props) {
                         children: "Username"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 30,
+                        lineNumber: 42,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Form.Control, {
@@ -30082,13 +30090,13 @@ function RegistrationView(props) {
                         placeholder: "Enter username"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 31,
+                        lineNumber: 43,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 29,
+                lineNumber: 41,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Form.Group, {
@@ -30098,7 +30106,7 @@ function RegistrationView(props) {
                         children: "Email address"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 35,
+                        lineNumber: 47,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Form.Control, {
@@ -30110,13 +30118,13 @@ function RegistrationView(props) {
                         placeholder: "Enter email"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 36,
+                        lineNumber: 48,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 34,
+                lineNumber: 46,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Form.Group, {
@@ -30126,7 +30134,7 @@ function RegistrationView(props) {
                         children: "Password"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 40,
+                        lineNumber: 52,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Form.Control, {
@@ -30138,13 +30146,13 @@ function RegistrationView(props) {
                         placeholder: "Enter password"
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 41,
+                        lineNumber: 53,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 39,
+                lineNumber: 51,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("button", {
@@ -30154,7 +30162,7 @@ function RegistrationView(props) {
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 44,
+                lineNumber: 56,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
@@ -30168,28 +30176,28 @@ function RegistrationView(props) {
                             children: "sign in"
                         }, void 0, false, {
                             fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 46,
+                            lineNumber: 58,
                             columnNumber: 55
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 46,
+                        lineNumber: 58,
                         columnNumber: 37
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/registration-view/registration-view.jsx",
-                lineNumber: 45,
+                lineNumber: 57,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/registration-view/registration-view.jsx",
-        lineNumber: 26,
+        lineNumber: 38,
         columnNumber: 9
     }, this));
 }
-_s(RegistrationView, "gU931AvYb9XYQdfa9ePG0mmeHF8=");
+_s(RegistrationView, "c5uj1OKRDMYLnb5oGCboYRk2Pyw=");
 _c = RegistrationView;
 RegistrationView.propTypes = {
     register: _propTypesDefault.default.shape({
@@ -30197,7 +30205,7 @@ RegistrationView.propTypes = {
         password: _propTypesDefault.default.string.isRequired,
         email: _propTypesDefault.default.string.isRequired
     }),
-    onRegistration: _propTypesDefault.default.func.isRequired
+    onRegistration: _propTypesDefault.default.func
 };
 var _c;
 $RefreshReg$(_c, "RegistrationView");

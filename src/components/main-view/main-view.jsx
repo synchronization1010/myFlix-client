@@ -83,20 +83,21 @@ export class MainView extends React.Component {
         <Container>
           <Row className="main-view justify-content-md-center">
             <Route exact path="/" render={() => {
-                if (!user) {
-                    return <Redirect to="/login" />;
-                }
+              if (!user) {
+                return <Redirect to="/login" />;
+              }
 
-                return (
-                    <>
-                        {movies.map(movie => (
-                            <Col md={3} key={movie._id}>
-                                <MovieCard movie={movie} onMovieClick={() => {}} />
-                            </Col>
-                        ))}
-                    </>
-                );
+              return (
+                <>
+                  {movies.map(movie => (
+                    <Col md={3} key={movie._id}>
+                      <MovieCard movie={movie} onMovieClick={() => {}} />
+                    </Col>
+                  ))}
+                </>
+              );
             }} />
+
             <Route path="/login" render={() => {
                 if (user) {
                     return <Redirect to="/" />;
@@ -104,6 +105,7 @@ export class MainView extends React.Component {
 
                 return <LoginView onLoggedIn={(data) => this.onLoggedIn(data)} />
             }} />
+
             <Route path="/register" render={() => {
                 if (user) {
                     return <Redirect to="/" />;
@@ -115,6 +117,8 @@ export class MainView extends React.Component {
                     </Col>
                 );
             }} />
+          
+
             <Route path="/movies/:movieId" render={({ match, history }) => {
                 if (!user) {
                     return (
@@ -136,6 +140,7 @@ export class MainView extends React.Component {
                     </Col>
                 );
             }} />
+
             <Route path="/profile" render={({ history }) => {
                 if (!user) {
                     return (
@@ -151,6 +156,7 @@ export class MainView extends React.Component {
                     </Col>
                 );
             }} />
+
             <Route path="/genres/:name" render={({ match, history }) => {
                 if (!user) {
                     return (
@@ -174,6 +180,7 @@ export class MainView extends React.Component {
                     </Col>
                 )
             }} />
+
             <Route path="/directors/:name" render={({ match, history }) => {
                 if (!user) {
                     return (

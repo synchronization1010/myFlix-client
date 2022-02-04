@@ -23019,13 +23019,13 @@ class MainView extends _reactDefault.default.Component {
         const { movies , user: user1  } = this.state;
         return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.BrowserRouter, {
             children: [
-                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbar.Navbar, {
+                user1 && /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbar.Navbar, {
                     id: "nav-bar",
                     user: user1
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 82,
-                    columnNumber: 9
+                    columnNumber: 18
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Row, {

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import './profile-view.scss';
 import { Link } from 'react-router-dom';
 import { Container, Card, Button, Row, Col, Form } from 'react-bootstrap';
+import { setUser, updateUser } from "../../actions/actions";
 
 export class ProfileView extends React.Component {
     constructor() {
@@ -300,3 +301,5 @@ ProfileView.propTypes = {
     })).isRequired,
     onBackClick: PropTypes.func.isRequired
 };
+
+export default connect(mapStateToProps, { setUser, updateUser })(ProfileView);
